@@ -1,4 +1,5 @@
 #include <pthread.h>
+#include <stdio.h>
 
 void *print_char(void *arg) {
     printf("%c", *(char*)arg);
