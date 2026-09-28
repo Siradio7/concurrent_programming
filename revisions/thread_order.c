@@ -1,9 +1,11 @@
 #include <stdio.h>
+#include <unistd.h>
 #include <pthread.h>
 
 void* worker(void* arg) {
     int id = *(int*) arg;
 
+    sleep(1);
     printf("Worker : %d\n", id);
 
     return NULL;
