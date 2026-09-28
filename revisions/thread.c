@@ -2,7 +2,9 @@
 #include <stdio.h>
 
 void* worker(void* arg) {
-    printf("Worker thread");
+    printf("Worker thread \n");
+
+    return NULL;
 }
 
 int main() {
