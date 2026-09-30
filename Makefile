@@ -3,7 +3,7 @@ CFLAGS = -pthread
 
 .PHONY: all clean
 
-all: alphabet threads threads2 thread th_arg th_return th_order
+all: alphabet threads threads2 thread th_arg th_return th_order data_race
 
 alphabet: lab1/alphabet.c
 	$(CC) $(CFLAGS) $< -o $@
@@ -25,5 +25,8 @@ th_return: revisions/thread_return.c
 th_order: revisions/thread_order.c
 	$(CC) $(CFLAGS) $< -o $@
 
+data_race: revisions/data_race.c
+	$(CC) $(CFLAGS) $< -o $@
+
 clean:
-	rm -f alphabet threads threads2 thread th_arg th_return th_order
+	rm -f alphabet threads threads2 thread th_arg th_return th_order data_race
