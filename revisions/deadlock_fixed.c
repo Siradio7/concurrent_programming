@@ -10,9 +10,6 @@ pthread_mutex_t mutexB;
 
 void* worker1(void* arg) {
     pthread_mutex_lock(&mutexA);
-
-    sleep(1);
-
     pthread_mutex_lock(&mutexB);
 
     for (int i = 0; i < 1000000; i++) {
@@ -27,9 +24,6 @@ void* worker1(void* arg) {
 
 void* worker2(void* arg) {
     pthread_mutex_lock(&mutexA);
-
-    sleep(1);
-
     pthread_mutex_lock(&mutexB);
 
     for (int i = 0; i < 1000000; i++) {
