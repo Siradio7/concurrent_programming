@@ -3,7 +3,7 @@ CFLAGS = -pthread
 
 .PHONY: all clean
 
-all: alphabet threads threads2 thread th_arg th_return th_order data_race mutex_counter critical_section critical_section_variant
+all: alphabet threads threads2 thread th_arg th_return th_order data_race mutex_counter critical_section critical_section_variant multiple_mutexes
 
 alphabet: lab1/alphabet.c
 	$(CC) $(CFLAGS) $< -o $@
@@ -33,8 +33,12 @@ mutex_counter: revisions/mutex_counter.c
 
 critical_section: revisions/critical_section.c
 	$(CC) $(CFLAGS) $< -o $@
+
 critical_section_variant: revisions/critical_section_variant.c
 	$(CC) $(CFLAGS) $< -o $@
 
+multiple_mutexes: revisions/multiple_mutexes.c
+	$(CC) $(CFLAGS) $< -o $@
+
 clean:
-	rm -f alphabet threads threads2 thread th_arg th_return th_order data_race mutex_counter critical_section critical_section_variant
+	rm -f alphabet threads threads2 thread th_arg th_return th_order data_race mutex_counter critical_section critical_section_variant multiple_mutexes
