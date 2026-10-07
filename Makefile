@@ -3,7 +3,7 @@ CFLAGS = -pthread
 
 .PHONY: all clean
 
-all: alphabet threads threads2 thread th_arg th_return th_order data_race mutex_counter critical_section critical_section_variant multiple_mutexes deadlock deadlock_fixed fine_grained_locking
+all: alphabet threads threads2 thread th_arg th_return th_order data_race mutex_counter critical_section critical_section_variant multiple_mutexes deadlock deadlock_fixed fine_grained_locking fine_grained
 
 alphabet: lab1/alphabet.c
 	$(CC) $(CFLAGS) $< -o $@
@@ -49,5 +49,8 @@ deadlock_fixed: revisions/deadlock_fixed.c
 fine_grained_locking: revisions/fine_grained_locking.c
 	$(CC) $(CFLAGS) $< -o $@
 
+fine_grained: revisions/fine_grained.c
+	$(CC) $(CFLAGS) $< -o $@
+
 clean:
-	rm -f alphabet threads threads2 thread th_arg th_return th_order data_race mutex_counter critical_section critical_section_variant multiple_mutexes deadlock deadlock_fixed fine_grained_locking
+	rm -f alphabet threads threads2 thread th_arg th_return th_order data_race mutex_counter critical_section critical_section_variant multiple_mutexes deadlock deadlock_fixed fine_grained_locking fine_grained
